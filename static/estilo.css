@@ -1,0 +1,118 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9;
+    margin: 0;
+    padding: 20px;
+    color: #333333;
+}
+/* Contenedor principal centrado */
+.contenedor {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+/* Título principal */
+h1 {
+    color: #1a6b3a;
+    border-bottom: 3px solid #1a6b3a;
+    padding-bottom: 10px;
+}
+
+/* Subtítulos */
+h2 {
+    color: #1565c0;
+}
+/* Campo de texto */
+input[type="text"] {
+    width: 60%;
+    padding: 8px 12px;
+    border: 2px solid #1565c0;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+
+/* Botón Guardar */
+button[type="submit"] {
+    background-color: #1565c0;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0d47a1;
+}
+/* Enlaces de Editar y Eliminar */
+a {
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+/* Botón Editar en verde */
+a[href*="editar"] {
+    background-color: #3fe75b;
+    color: white;
+}
+
+a[href*="editar"]:hover {
+    background-color: #106e20;
+}
+
+/* Botón Eliminar en rojo */
+a[href*="eliminar"] {
+    background-color: #3fe75b;
+    color: white;
+}
+
+a[href*="eliminar"]:hover {
+    background-color: #df1919;
+}
+/* Lista de notas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e3f2fd;
+    border-left: 4px solid #1565c0;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Cancelar enlace */
+a[href="/"] {
+    background-color: #757575;
+    color: white;
+}
+
+a[href="/"]:hover {
+    background-color: #424242;
+}
+/* Espaciado del título */
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Separador hr */
+hr {
+    border: none;
+    border-top: 1px solid #bbdefb;
+    margin: 20px 0;
+}

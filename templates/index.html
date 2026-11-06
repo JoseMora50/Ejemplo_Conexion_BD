@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Micro CRUD Completo - Notas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Mis Notas (Micro CRUD Completo)</h1>
+        <!-- FORMULARIO DINÁMICO (CREAR O ACTUALIZAR) -->
+        <!-- Si 'nota_actual' fue enviada por Flask, el formulario se transforma a modo EDICIÓN -->
+         {% if nota_actual %}
+         <h2>Modificar Nota (ID: {{ nota_actual[0] }})</h2>
+         <form action="/actualizar/{{ nota_actual[0] }}" method="POST">
+            <!-- Cargamos el texto antiguo dentro del atributo 'value' -->
+            <input type="text" name="contenido_nota" value="{{ nota_actual[1] }}" required>
+            <button type="submit">Actualizar</button>
+            <a href="/">Cancelar</a>
+        </form>
+        {% else %}
+        <!-- Si no hay 'nota_actual', la página muestra el formulario normal de CREACIÓN -->
+         <h2>Agregar Nueva Nota</h2>
+         <form action="/agregar" method="POST">
+            <input type="text" name="contenido_nota" placeholder="Escribe una nota aquí..." required>
+            <button type="submit">Guardar Nota</button>
+        </form>
+        {% endif %}
+        <hr>
+        <!-- LISTA DE NOTAS (LEER, EDITAR Y ELIMINAR) -->
+         <h2>Notas Guardadas:</h2>
+         <ul>
+            {% for nota in notas %}
+            <li>
+                <strong>[{{ nota[0] }}]</strong> {{ nota[1] }}
+                <!-- Enlace para activar el PASO A del UPDATE -->
+                <a href="/editar/{{ nota[0] }}">[Editar]</a>
+                <!-- Enlace para el DELETE -->
+                <a href="/eliminar/{{ nota[0] }}">[Eliminar]</a>
+            </li>
+            {% else %}
+            <li>No hay notas registradas aún.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
